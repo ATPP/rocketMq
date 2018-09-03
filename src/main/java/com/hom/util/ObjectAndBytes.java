@@ -3,9 +3,7 @@ package com.hom.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 public class ObjectAndBytes {
     private static final Logger logger = LoggerFactory.getLogger(ObjectAndBytes.class);
@@ -41,5 +39,39 @@ public class ObjectAndBytes {
 
         }
         return bytes;
+    }
+
+    /**
+     * Byte数组转对象
+     * @param bytes
+     * @return
+     */
+    public static Object byteArrayToObject(byte[] bytes) {
+        Object obj = null;
+        ByteArrayInputStream byteArrayInputStream = null;
+        ObjectInputStream objectInputStream = null;
+        try {
+            byteArrayInputStream = new ByteArrayInputStream(bytes);
+            objectInputStream = new ObjectInputStream(byteArrayInputStream);
+            obj = objectInputStream.readObject();
+        } catch (Exception e) {
+            logger.error("byteArrayToObject failed, " + e);
+        } finally {
+            if (byteArrayInputStream != null) {
+                try {
+                    byteArrayInputStream.close();
+                } catch (IOException e) {
+                    logger.error("close byteArrayInputStream failed, " + e);
+                }
+            }
+            if (objectInputStream != null) {
+                try {
+                    objectInputStream.close();
+                } catch (IOException e) {
+                    logger.error("close objectInputStream failed, " + e);
+                }
+            }
+        }
+        return obj;
     }
 }
