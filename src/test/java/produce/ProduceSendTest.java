@@ -24,7 +24,7 @@ public class ProduceSendTest {
         for (int i = 0; i < 20; i++) {
             //创建一条消息对象，指定其主题、标签和消息内容
             Message msg = new Message(
-                    "diffebnTopic",
+                    "homTopic",
                     null,
                     ("Spring RocketMQ demo " + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* 消息内容 */
             );

@@ -9,7 +9,7 @@
     <bean id="messageListener" class="com.hom.common.consumer.MsgListener"/>
 
     <bean id="consumer" class="com.hom.common.consumer.RocketMqConsumer" init-method="init" destroy-method="destroy">
-        <constructor-arg name="topic" value="diffebnTopic" />
+        <constructor-arg name="topic" value="homTopic" />
         <constructor-arg name="messageListener" ref="messageListener" />
     </bean>
 
