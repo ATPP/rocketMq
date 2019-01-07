@@ -41,6 +41,13 @@
             <artifactId>spring-oxm</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>

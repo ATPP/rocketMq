@@ -13,6 +13,7 @@ import org.apache.rocketmq.logging.InternalLogger;
 import org.apache.rocketmq.remoting.exception.RemotingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.UUID;
 
@@ -20,7 +21,9 @@ public class RocketMqProduce {
 
     private static final Logger logger = LoggerFactory.getLogger(RocketMqProduce.class);
 
-    private ProduceConf produceConf = new ProduceConf();
+//    private ProduceConf produceConf = new ProduceConf();
+    @Autowired
+    private ProduceConf produceConf;
     private DefaultMQProducer producer;
 
     public RocketMqProduce() {

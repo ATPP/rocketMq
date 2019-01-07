@@ -8,5 +8,7 @@
 
    <!--  对package进行扫描 -->
     <context:component-scan base-package="com.hom" annotation-config="true"/>
+    <import resource="spring-consumer.xml"></import>
+    <import resource="spring-producer.xml"></import>
 
 </beans>

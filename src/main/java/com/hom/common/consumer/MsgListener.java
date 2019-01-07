@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+/**
+ * 监听处理类，pushConsumer
+ */
 public class MsgListener implements MessageListenerConcurrently {
 
     private static final Logger logger = LoggerFactory.getLogger(MsgListener.class);
